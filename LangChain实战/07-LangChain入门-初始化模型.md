@@ -4,7 +4,7 @@
 
 LangChain支持现在市面上大部分常见的大语言模型（LLM），并且提供了各个模型的对应依赖库
 
-![image-20261025162702476](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025162702476.png)
+![image-20261025162702476](LangChain实战/images/image-20261025162702476.png)
 
 如果想要调用某个模型，即导入对应的包，然后创建模型即可实现，例子如下（gpt为例）
 
