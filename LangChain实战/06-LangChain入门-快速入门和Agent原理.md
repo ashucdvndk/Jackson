@@ -222,11 +222,11 @@ Agent = 聪明的大脑 + 手脚
 
 传统的LLM应用都是一问一答的形式，模型只能根据自己的训练数据来回答，流程很简单
 
-![image-20261025160248646](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025160248646.png)
+![image-20261025160248646](https://github.com/ashucdvndk/Jackson/blob/ace0883977bbc08b478b4b31fd146a046a00f487/LangChain%E5%AE%9E%E6%88%98/images/image-20261025160248646.png)
 
 而Agent则可以调用工具与外界进行交互，获取实时信息，流程自然会变得复杂一些：
 
-![image-20261025160352599](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025160352599.png)
+![image-20261025160352599](https://github.com/ashucdvndk/Jackson/blob/ace0883977bbc08b478b4b31fd146a046a00f487/LangChain%E5%AE%9E%E6%88%98/images/image-20261025160352599.png)
 
 流程如下：
 
@@ -246,7 +246,7 @@ Agent = 聪明的大脑 + 手脚
 
 在大模型提供的API接口中，有一个tools参数，描述了工具的详细信息：
 
-![image-20261025161140760](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025161140760.png)
+![image-20261025161140760](https://github.com/ashucdvndk/Jackson/blob/main/LangChain%E5%AE%9E%E6%88%98/images/image-20261025161140760.png)
 
 所以，LangChain会把tool的信息封装为此tool参数，与message一起发送给大模型，大模型就了解了tool的详细信息，根据用户需求判断是否需要调用tool，需要调用哪个tool
 
@@ -256,10 +256,10 @@ Agent = 聪明的大脑 + 手脚
 
 模型的确不能直接调用tool，只能返回字符串。但是它可以把要调用的tool信息、参数信息都以Json格式返回：
 
-![image-20261025161522711](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025161522711.png)
+![image-20261025161522711](https://github.com/ashucdvndk/Jackson/blob/main/LangChain%E5%AE%9E%E6%88%98/images/image-20261025161522711.png)
 
 这样的话，LangChain就会帮助我们解析响应结果中的Function信息，也就是tool信息，就知道了要调用哪个函数，以及参数是什么。LangChain就会执行该函数，再把得到的结果再次发送给大模型。
 
 具体的流程图如下：
 
-![image-20261025161752365](C:\Users\20840\AppData\Roaming\Typora\typora-user-images\image-20261025161752365.png)
+![image-20261025161752365](https://github.com/ashucdvndk/Jackson/blob/main/LangChain%E5%AE%9E%E6%88%98/images/image-20261025161752365.png)
